@@ -27,7 +27,8 @@ How to connect to postgresql from iOS9. http://goo.gl/nXzeGy
 7.Make sure test it on the device.
 
 #What's in there?
-In "ViewController" there is a function call "mainConn" it main function is send data to C API function "mainConn" which in the "testPostgreSqlAPI_h"
+In "ViewController" there is a function call "mainConn" it main function is send data to C API function "mainConn" which in the "testPostgreSqlAPI_h".
+
 
 "testPostgreSqlAPI_h" is base on this http://goo.gl/u2XRQj and https://goo.gl/hQiwnb tutorial.
 In "testPostgreSqlAPI_h" to connect to the PGSQL you will need to use 
@@ -35,10 +36,12 @@ In "testPostgreSqlAPI_h" to connect to the PGSQL you will need to use
     conn = PQconnectdb(conninfo);
 And "conninfo" is the connect information like Server IP or Addr, Port, UserNM, DBNM...
 
+
 After connecttion you can start sending sql script by using:
     // exec Sql Script
     res = PQexec(conn, AssemblySqlScript);
 In there "AssemblySqlScript" is your SQL script.
+
 
 About the rest of it you can check this tutorial http://goo.gl/u2XRQj
 
