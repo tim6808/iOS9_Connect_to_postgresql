@@ -21,23 +21,30 @@ How to connect to postgresql from iOS9. http://goo.gl/nXzeGy
 1.Go find a libpq.framework.
 2.You have to create a C type file(because libpq is not Obj-c.) as C API to connect libpq.
 3.After that create a Bridging-Header to connect it.(It Bridging will not generate its own)
-4.Back to the C type file you created
+4.Back to the C type file you created.
 5.Follow this "PostgreSQL C Language API" tutorial this tutorial saved me a lot of time .(C has been a very far away from me.)
 6.If need, go to Build Settings >> Enable Bitcode >> YES
 7.Make sure test it on the device.
 
 #What's in there?
+#"ViewController" 
 In "ViewController" there is a function call "mainConn" it main function is send data to C API function "mainConn" which in the "testPostgreSqlAPI_h".
 
+#"testPostgreSqlAPI_h"
+The "testPostgreSqlAPI_h" file is base on this http://goo.gl/u2XRQj and https://goo.gl/hQiwnb tutorial.
 
-"testPostgreSqlAPI_h" is base on this http://goo.gl/u2XRQj and https://goo.gl/hQiwnb tutorial.
-In "testPostgreSqlAPI_h" to connect to the PGSQL you will need to use 
+
+In "testPostgreSqlAPI_h" to connect to the PGSQL you will need to use:
+
+
     // Make a connection to the database
     conn = PQconnectdb(conninfo);
 And "conninfo" is the connect information like Server IP or Addr, Port, UserNM, DBNM...
 
 
 After connecttion you can start sending sql script by using:
+
+
     // exec Sql Script
     res = PQexec(conn, AssemblySqlScript);
 In there "AssemblySqlScript" is your SQL script.
