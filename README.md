@@ -53,3 +53,4 @@ In there "AssemblySqlScript" is your SQL script.
 About the rest of it you can check this tutorial http://goo.gl/u2XRQj
 
 
+P.S Usually, the most common approach is to create a web api as bridge between apps and server(like MSSQL,PGSQL,MYSQL...), and that is the easy/safe way to do it.
